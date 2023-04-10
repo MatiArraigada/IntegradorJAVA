@@ -8,14 +8,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-
 public class Main {
 
     public static void  main(String[] args) {
 
         //leer archivo
-        String resultadosFile = "..\\resultados.csv";
+        String resultadosFile = "resultados.csv";
         Object[] lineas = null;
+
         try {
             lineas = Files.readAllLines(Paths.get(resultadosFile)).toArray();
             for (Object linea : lineas) {
@@ -24,17 +24,31 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //
+        String pronosticoFile = "pronostico.csv";
+        Object[] lineas2 = null;
+
+        try {
+            lineas2 = Files.readAllLines(Paths.get(pronosticoFile)).toArray();
+            for (Object linea2 : lineas2) {
+                System.out.println(linea2.toString());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Partido partidoI = new Partido();
+        Partido partidoII = new Partido();
+        Equipo teamI = new Equipo();
+        Equipo teamII = new Equipo();
+        Partido partido1 = new Partido();
+        Partido partido2 = new Partido();
+        Equipo equipoI = new Equipo();
+        Equipo equipoII = new Equipo();
+        int puntos = 0;
         for (int i = 0; i < lineas.length; i++) {
             String[] lineaI = lineas[i].toString().split(",");
-            Partido partido1 = new Partido();
-            Partido partido2 = new Partido();
-
-            Equipo equipoI = new Equipo();
             equipoI.setNombre(lineaI[0]);
             equipoI.setGoles(Integer.parseInt(lineaI[1]));
-
-            Equipo equipoII = new Equipo();
             equipoII.setNombre(lineaI[2]);
             equipoII.setGoles(Integer.parseInt(lineaI[3]));
 
@@ -64,7 +78,6 @@ public class Main {
                         equipoI.setResultadoEnum(ResultadoEnum.PERDEDOR);
                         System.out.println(equipoII.getNomEquipo() + " " + equipoII.getResultadoEnum());
                     }
-
                     break;
                 }
                 case 1: {
@@ -77,13 +90,13 @@ public class Main {
                             " vs "+
                             partido2.getEquipo2().getNomEquipo());
 
-                    if(partido1.getGolesEquipo1()==partido1.getGolesEquipo2()){
+                    if(partido2.getGolesEquipo1()==partido2.getGolesEquipo2()){
 
                         equipoI.setResultadoEnum(ResultadoEnum.EMPATE);
                         equipoII.setResultadoEnum(ResultadoEnum.EMPATE);
                         System.out.println("empataron");
 
-                    } else if (partido1.getGolesEquipo1()>partido1.getGolesEquipo2()) {
+                    } else if (partido2.getGolesEquipo1()>partido2.getGolesEquipo2()) {
                         equipoI.setResultadoEnum(ResultadoEnum.GANADOR);
                         equipoII.setResultadoEnum(ResultadoEnum.PERDEDOR);
                         System.out.println(equipoI.getNomEquipo() +" " + equipoI.getResultadoEnum());
@@ -96,10 +109,71 @@ public class Main {
                     break;
                 }
             }
-
-
         }
+        for (int i = 0; i < lineas2.length; i++) {
+            String[] lineaII = lineas2[i].toString().split(",");
 
+            String comparador = "x";
+            teamI.setNombre(lineaII[0]);
+            teamII.setNombre(lineaII[4]);
 
+            switch (i){
+                case 0: {
+                    partidoI.setEquipo1(teamI);
+                    partidoI.setEquipo2(teamII);
+
+                    if (lineaII[1].equals(comparador)){
+                        teamI.setResultadoEnum(ResultadoEnum.GANADOR);
+                        teamII.setResultadoEnum(ResultadoEnum.PERDEDOR);
+                        if (teamI.getResultadoEnum().equals(equipoI.getResultadoEnum())){
+                            puntos++;
+
+                        }
+                    } else if (lineaII[2].equals(comparador)) {
+                        teamI.setResultadoEnum(ResultadoEnum.EMPATE);
+                        teamII.setResultadoEnum(ResultadoEnum.EMPATE);
+                        if (teamI.getResultadoEnum().equals(equipoI.getResultadoEnum())){
+                            puntos++;
+                        }
+                    }
+                    else {
+                        teamI.setResultadoEnum(ResultadoEnum.PERDEDOR);
+                        teamII.setResultadoEnum(ResultadoEnum.GANADOR);
+                        if (teamI.getResultadoEnum().equals(equipoI.getResultadoEnum())){
+                            puntos++;
+                        }
+                    }
+                    break;
+                    }
+                case 1:{
+                    partidoII.setEquipo1(teamI);
+                    partidoII.setEquipo2(teamII);
+
+                    if (lineaII[1].equals(comparador)){
+                        teamI.setResultadoEnum(ResultadoEnum.GANADOR);
+                        teamII.setResultadoEnum(ResultadoEnum.PERDEDOR);
+                        if (teamI.getResultadoEnum().equals(equipoI.getResultadoEnum())){
+                            puntos++;
+
+                        }
+                    } else if (lineaII[2].equals(comparador)) {
+                        teamI.setResultadoEnum(ResultadoEnum.EMPATE);
+                        teamII.setResultadoEnum(ResultadoEnum.EMPATE);
+                        if (teamI.getResultadoEnum().equals(equipoI.getResultadoEnum())){
+                            puntos++;
+                        }
+                    }
+                    else if (lineaII[3].equals(comparador)){
+                        teamI.setResultadoEnum(ResultadoEnum.PERDEDOR);
+                        teamII.setResultadoEnum(ResultadoEnum.GANADOR);
+                        if (teamI.getResultadoEnum().equals(equipoI.getResultadoEnum())){
+                            puntos++;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        System.out.println("Puntos obtenidos: " + puntos);
     }
 }
