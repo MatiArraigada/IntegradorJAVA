@@ -45,7 +45,7 @@ public class Main {
         Equipo equipoI = new Equipo();
         Equipo equipoII = new Equipo();
         int puntos = 0;
-        for (int i = 0; i < lineas.length; i++) {
+        for (int i = 1; i < lineas.length; i++) {
             String[] lineaI = lineas[i].toString().split(",");
             equipoI.setNombre(lineaI[0]);
             equipoI.setGoles(Integer.parseInt(lineaI[1]));
@@ -53,7 +53,7 @@ public class Main {
             equipoII.setGoles(Integer.parseInt(lineaI[3]));
 
             switch (i){
-                case 0: {
+                case 1: {
                     partido1.setEquipo1(equipoI);
                     partido1.setEquipo2(equipoII);
                     partido1.setGolesEquipo1(equipoI.getGoles());
@@ -80,7 +80,7 @@ public class Main {
                     }
                     break;
                 }
-                case 1: {
+                case 2: {
                     partido2.setEquipo1(equipoI);
                     partido2.setEquipo2(equipoII);
                     partido2.setGolesEquipo1(equipoI.getGoles());
@@ -110,7 +110,7 @@ public class Main {
                 }
             }
         }
-        for (int i = 0; i < lineas2.length; i++) {
+        for (int i = 1; i < lineas2.length; i++) {
             String[] lineaII = lineas2[i].toString().split(",");
 
             String comparador = "x";
@@ -118,7 +118,7 @@ public class Main {
             teamII.setNombre(lineaII[4]);
 
             switch (i){
-                case 0: {
+                case 1: {
                     partidoI.setEquipo1(teamI);
                     partidoI.setEquipo2(teamII);
 
@@ -145,7 +145,7 @@ public class Main {
                     }
                     break;
                     }
-                case 1:{
+                case 2:{
                     partidoII.setEquipo1(teamI);
                     partidoII.setEquipo2(teamII);
 
