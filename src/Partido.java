@@ -1,4 +1,4 @@
-package org.example;
+package org.example.src;
 
 public class Partido {
     private Equipo equipo1;

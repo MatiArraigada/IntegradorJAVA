@@ -1,9 +1,4 @@
-package org.example;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+package org.example.src;
 
 public class Equipo {
     private String nombre;
