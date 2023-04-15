@@ -9,7 +9,7 @@ public class Main {
     public static void  main(String[] args) {
 
         //leer archivo
-        String resultadosFile = "src/resultados.csv";
+        String resultadosFile = "IntegradorJAVA\\src\\resultados.csv";
         Object[] lineas = null;
 
         try {
@@ -20,7 +20,7 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String pronosticoFile = "src/pronostico.csv";
+        String pronosticoFile = "IntegradorJAVA\\src\\pronostico.csv";
         Object[] lineas2 = null;
 
         try {
