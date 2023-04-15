@@ -36,7 +36,7 @@ public class Pronostico {
         return participante;
     }
     public void setParticipante(String participante) {
-        participante = participante;
+        this.participante = participante;
     }
     public int getRonda() {
         return ronda;

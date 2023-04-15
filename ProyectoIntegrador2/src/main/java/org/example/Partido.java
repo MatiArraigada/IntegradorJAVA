@@ -51,17 +51,4 @@ public class Partido {
     public void setRonda(int ronda) {
         this.ronda = ronda;
     }
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("\nEquipo1: ");
-        sb.append(equipo1);
-        sb.append("\ngoles equipo 1 : ");
-        sb.append(golesEquipo1);
-        sb.append("\nequipo 2: ");
-        sb.append(equipo2);
-        sb.append("\ngoles equipo 2: ");
-        sb.append(golesEquipo2);
-        return sb.toString();
-    }
 }
