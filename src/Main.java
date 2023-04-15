@@ -20,7 +20,12 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+<<<<<<< Updated upstream:src/Main.java
         String pronosticoFile = "IntegradorJAVA\\src\\pronostico.csv";
+=======
+
+        String pronosticoFile = "pronostico.csv";
+>>>>>>> Stashed changes:Main.java
         Object[] lineas2 = null;
 
         try {
@@ -107,9 +112,8 @@ public class Main {
             }
         }
         for (int i = 1; i < lineas2.length; i++) {
-            String[] lineaII = lineas2[i].toString().split(",");
-
             String comparador = "x";
+            String[] lineaII = lineas2[i].toString().split(",";
             teamI.setNombre(lineaII[0]);
             teamII.setNombre(lineaII[4]);
 
