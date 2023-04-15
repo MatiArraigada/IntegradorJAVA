@@ -8,8 +8,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        String resultadosFile = "src\\main\\java\\org\\example\\resultados.csv";
-        String pronosticoFile = "src\\main\\java\\org\\example\\pronostico.csv";
+        String resultadosFile = "src\\main\\resources\\resultados.csv";
+        String pronosticoFile = "src\\main\\resources\\pronostico.csv";
         String participante = "";
         int puntos = 0;
         Object[] lineas = null;
