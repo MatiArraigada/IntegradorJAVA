@@ -1,4 +1,6 @@
-package org.example;
+package org.example.ProyectoIntegrador2.src.main.java.org.example;
+
+
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,14 +10,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        String resultadosFile = "src\\main\\resources\\resultados.csv";
-        String pronosticoFile = "src\\main\\resources\\pronostico.csv";
+        String resultadosFile = "ProyectoIntegrador2\\src\\main\\resources\\resultados.csv";
+        String pronosticoFile = "ProyectoIntegrador2\\src\\main\\resources\\pronostico.csv";
         String participante = "";
         int puntos = 0;
         Object[] lineas = null;
         Object[] lines = null;
         ArrayList<Partido> partidos = new ArrayList<>();
-        ArrayList<Pronostico> pronosticos = new ArrayList<>();
+        ArrayList<org.example.Pronostico> pronosticos = new ArrayList<>();
         ArrayList<Persona> personas = new ArrayList<>();
 
         try {
@@ -50,7 +52,7 @@ public class App
         }
         for (int i = 1; i < lines.length; i++) {
             String[] line = lines[i].toString().split(",");
-            Pronostico pronostico = new Pronostico();
+            org.example.Pronostico pronostico = new org.example.Pronostico();
             Persona persona = new Persona();
             persona.setPersona(line[0]);
             pronostico.setParticipante(line[0]);

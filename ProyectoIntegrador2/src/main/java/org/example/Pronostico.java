@@ -1,4 +1,8 @@
 package org.example;
+
+import org.example.ProyectoIntegrador2.src.main.java.org.example.Partido;
+import org.example.ProyectoIntegrador2.src.main.java.org.example.ResultadoEnum;
+
 public class Pronostico {
     private Partido partido;
     private String equipo1;

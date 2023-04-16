@@ -1,4 +1,5 @@
-package org.example;
+package org.example.ProyectoIntegrador2.src.main.java.org.example;
+
 public class Partido {
     private String equipo1;
     private String equipo2;

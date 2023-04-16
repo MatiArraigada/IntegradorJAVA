@@ -1,4 +1,5 @@
-package org.example;
+package org.example.ProyectoIntegrador2.src.main.java.org.example;
+
 import java.util.ArrayList;
 public class Ronda {
     private String nro;

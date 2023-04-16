@@ -1,4 +1,4 @@
-package org.example;
+package org.example.ProyectoIntegrador2.src.test.java.org.example;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
